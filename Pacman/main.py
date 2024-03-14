@@ -8,7 +8,7 @@ if __name__ == "__main__":
         print("Usage: python main.py <nameMap> <searchFunction>")
         sys.exit()
 
-    if len(sys.argv) <= 3:
+    if len(sys.argv) == 3:
         _, nameMap, searchFunction = sys.argv
         visualization.Visualize(nameMap, searchFunction).visualize()
     else:
