@@ -86,6 +86,14 @@ class CornerAndAllFoodSearchAgent(SearchAgent):
         return (self.pacmanPosition, self.food, self.cornersVisited)
 
     def isGoalState(self, state):
+        if state[0] not in self.visitedList:
+            self.visitedList.append(state[0])
+            import __main__
+
+            if "_display" in dir(__main__):
+                if "drawExpandedCells" in dir(__main__._display):
+                    __main__._display.drawExpandedCells(self.visitedList)
+                    
         return state[1].count() == 0 and all(state[2])
 
     def getSuccessors(self, state):
